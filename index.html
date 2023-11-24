@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <title>Predicting Scientific Figures as Colorblind Friendly or Not</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/colorblind_friendly_tester/public/page_styling.css">
+  <!--<link rel="stylesheet" type="text/css" href="/public/page_styling.css">!-->
+</head>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.0.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<body>
+  <div class="header">
+    <h2>Colorblind Friendliness Predictor</h2>
+    <p>
+      Upload scientific figures and obtain a prediction about whether the figures are friendly to people with moderate-to-severe, red-green colorblindness (deuteranopia). The machine learning model used to make these predictions is accurate, but it is not perfect. Consider checking your figures with someone who has deuteranopia.
+    </p>
+  </div>
+  <div class="flow_box">
+    <div class="container" id="originalImageContainer">
+            <!-- <p>Your uploaded image will display below:</p> -->
+      <p>UPLOAD A SCIENTIFIC FIGURE</p>
+      <form id="uploadForm">
+        <input type="file" name="fileupload" accept="image/*" id="uploadedFile">
+        <button type="submit" name="upload" >SUBMIT</button>
+
+      </form>
+
+      <!-- <p>Your uploaded image will display below:</p> -->
+      <div id="input_image_container">
+        <!--<img src="/public/defaultimage.png" id="input_image" style="top:10vh;"> !-->
+        <img src="/colorblind_friendly_tester/public/defaultimage.png" id="input_image" style="top:10vh;">
+
+      </div>
+    </div>
+    <i class="arrow right"></i>
+    <div class="container" id="simulatedImageContainer">
+      <p>SIMULATED IMAGE</p>
+
+      <!-- <button name="show_image" id="show_simulated" onclick="simulateImage()">SHOW SIMULATED IMAGE</button> -->
+      <!-- <p>Your simulated image will display below:</p> -->
+
+      <div id="input_image_container">
+        <div id="loader" class="center"></div>
+        <img src="/colorblind_friendly_tester/public/converted_image.png" id="output_image">
+        <!--<img src="/public/converted_image.png" id="output_image">!-->
+      </div>
+      <p id="simulated_image_text">This image is displayed how someone with 80% deuteranopia would see it.</p>
+    </div>
+    <i class="arrow right"></i>
+    <div class="container" id="predictImageContainer">
+      <p>PREDICTION</p>
+      <!-- <button name="predict" onclick="predict_image()">PREDICT IF YOUR IMAGE IS COLORBLIND-FRIENDLY</button> -->
+      <!-- <p>Check how colorblind-friendly your image is! </p> -->
+      <div class="output_screen">
+        <div id="output_text">
+          <p>Our model predicts that this image is: </p>
+          <p id='prediction_text'> Friendly/Unfriendly </p>
+          <p> (X% confidence)</p>
+          <p>The closer the confidence to 100%, the higher the confidence the model has in its prediction.</p>
+        </div>
+        <div id="loader1" class="center"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+
+    <div class="footer_content">
+      <div class="github">
+        <span>
+          <a href="/colorblind_friendly_tester/about">
+            About
+          </a>
+        </span>
+         | 
+        <span>
+          <a href="/colorblind_friendly_tester/cite">
+            Cite this Tool
+          </a>
+        </span>
+      </div>
+      <div class="footer_logo">
+        <img src="https://brightspotcdn.byu.edu/e4/0a/b679ee0a41d9b1675fc78cd03239/byu-logo-white-small.svg" alt="BYU">
+      </div>
+    </div>
+  </div>
+  <script src="/colorblind_friendly_tester/public/script.js"></script>
+  <!--<script src="/public/script.js"></script> !-->
+</body>
+</html>

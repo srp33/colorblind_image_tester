@@ -7,8 +7,6 @@ COPY package-lock.json package-lock.json
 
 RUN npm install
 
-COPY . .
-
 RUN mkdir -p /app/public/tfjs_target_dir
 RUN wget -O /app/public/tfjs_target_dir/model.json https://osf.io/download/te3p8
 RUN wget -O /app/public/tfjs_target_dir/group1-shard1of23.bin https://osf.io/download/emgkb
@@ -35,6 +33,7 @@ RUN wget -O /app/public/tfjs_target_dir/group1-shard21of23.bin https://osf.io/do
 RUN wget -O /app/public/tfjs_target_dir/group1-shard22of23.bin https://osf.io/download/tyf8p
 RUN wget -O /app/public/tfjs_target_dir/group1-shard23of23.bin https://osf.io/download/akq38
 
+COPY . .
 RUN chmod -R 777 /app/
 
 CMD ["node", "app.js"]

@@ -4,8 +4,7 @@ var bodyParser = require('body-parser')
 const fs = require('fs');
 const e = require('express');
 
-const colorblindPrefix = "/colorblind_friendly_tester"
-//const colorblindPrefix = ""
+const colorblindPrefix = "/colorblind_image_tester"
 
 app.use(colorblindPrefix + '/public', express.static(process.cwd() + '/public'));
 

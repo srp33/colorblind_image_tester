@@ -7,16 +7,19 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-size: 1.5em;
 }
+
 .flow_box{
     display: flex;
     align-items: center;
     flex: 1;
-
 }
+
 #uploadedFile{
     max-width: 75%;
 }
+
 .header{
     background-color: #002E5D;
     /* height: 10vh; */
@@ -26,12 +29,13 @@ body {
 }
 
 .header h2 {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .info p {
     text-align: left;
     text-align-last: left;
+    margin: 15px;
 }
 
 p{

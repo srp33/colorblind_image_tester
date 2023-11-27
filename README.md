@@ -1,43 +1,18 @@
-# Colorblind Friendliness Predictor
+# Colorblind image tester
 
-## Using the Website
-This GitHub contains the source code for this website: [https://bioapps.byu.edu/colorblind_friendly_tester](https://bioapps.byu.edu/colorblind_friendly_tester).
-We intend for the website to function as a tool for researchers preparing manuscripts to verify that their images
-are colorblind-friendly to people with deuteranopia (red-green colorblind).
+We created this web application as part of a larger project to estimate how often scientific figures in biology-related papers are problematic to people with color vision deficiencies (CVD). After manually evaluating 6,000 images from the [eLife journal](https://elifesciences.org), we found that ~13% of images would be hard to interpret for someone with deuteranopia, the most common form of CVD (red/green colorblindness). From this curated dataset, we trained a convolutional neural network (CNN) to predict whether images are colorblind-friendly or not. This web application makes it possible for biologists to apply our CNN to their own images. Users can upload a JPG or PNG image, and the Web application will display a simulated image that approximates how a person with moderate-to-severe deuteranopia would see the image. Additionally, they will see a prediction—based on the CNN—about whether the image is "friendly" or not. This prediction includes a probability so that users can understand the extent to which the model is "confident" in its predictions. Our model is accurate but not perfect; therefore, we encourage biologists to use this tool as a starting point, not to obtain definitive answers about whether a given image is friendly or not. Also, our CNN was trained on biology-related images. It might be less effective for images from other disciplines.
 
-A user can upload a JPG or PNG image to the website and an image is returned how someone with 80% deuteranopia would see 
-that same image according to the Machado et al. 2009 algorithm. If the user wants, they can then run that deuteranomaly-simulated image through our [machine-learning model](https://github.com/Harlan144/CVDMachineLearning)
-and return a prediction of whether the image is colorblind-friendly or not.
+You can run the Web application locally (instructions below). Or you can use the site hosted [here](https://bioapps.byu.edu/colorblind_friendly_tester).
 
-## Running the code locally
-If you want to experiment with this website or improve it (there is a lot of room for that!), feel free to download the GitHub.
+## Running the Web application locally
 
-The website can either be run directly with NodeJS or through Docker (which will create an Image with NodeJS). I will describe both processes below.  
-### Using NodeJS
-1. Ensure that you have NodeJS and npm installed on your computer with:
-  ```
-node -v
-npm -v
-  ```
-If those are not installed, follow [this guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).  
-2. Move to the website folder at the terminal.  
-3. Run `npm install`.  
-4. Run `node app.js`.  
-5. Open the website at localhost:3000/colorblind_friendly_tester on your browser of choice.  
-
-### Using Docker
 1. Ensure you have Docker up and running. It can be downloaded [here](https://docs.docker.com/get-docker/).
-2. Move to the website folder at the terminal
-3. Run `./build_docker.sh`
-4. Run `./run_docker/sh`
-5. Open the website at localhost:8080/colorblind_friendly_tester on your browser of choice.
+2. Clone this repository.
+3. At the terminal, change your working directory to the location of the cloned repository.
+4. Run the following command at the terminal: `./build_docker.sh` (this assumes you are using a Linux-based operating system).
+5. Run the following command at the terminal: `./run_docker/sh`
+6. Use a browser to access the website at localhost:8080/colorblind_friendly_tester.
 
-## Website Background
+## Reporting bugs or making improvements
 
-We created this website as part of a larger project to expose how often scientific figures can be problematic to people with color vision deficiencies (CVD). From manually annotating and classifying 6,000 images from the eLife journal, we found that >12% of images would be hard to understand for someone with red-green color blindness. From this curated dataset, we trained a convolutional neural network to predict whether images are colorblind-friendly or not.  
-
-This website is meant to make our machine learning model more accessible and to enable researchers to identify whether their own images are potentially problematic. This tool allows users to see their image alongside a deuteranopia-simulated version of the image. If the user requests it, the application uses our classification model to predict whether the image is likely to be problematic to a person with deuteranopia; this prediction includes a probability so that users can understand the extent to which the model is "confident" in its predictions. Our convolutional neural network is not 100% accurate (its usually around 90% accurate), so if possible, one should consult someone with deuteranopia if they are unsure if their image is friendly.
-
-To transfer our [trained convolutional neural network](https://github.com/Harlan144/CVDMachineLearning) to this website, we used Tensorflowjs version 4.0.0 to export the model as a JSON. This website uses a NodeJS framework. To be consistent with how the deuteranopia-simulated images were generated for training the model, the web server executes a Javascript function that runs the image through Machado's deuteranopia matrix. This function was modified from code at: https://github.com/MaPePeR/jsColorblindSimulator. The model prediction runs on the front-end through vanilla Javascript and uses Tensorflowjs 4.0.0. We use Tensorflowjs to resize the deuteranopia-simulated image to 224x224 pixels (the input image size for the model) and predict how problematic the image is to a person with deuteranopia.
-
-   
+Please [let us know](https://github.com/srp33/colorblind_image_tester/issues) if you have a question or find a bug with the tool. We also welcome pull requests!

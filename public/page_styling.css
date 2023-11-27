@@ -24,6 +24,7 @@ body {
     border-bottom: 1px solid black;
     box-shadow: 0 0 10px rgb(0 0 0 / 16%);
     color: white;
+    margin: 5px;
 }
 
 .header h2 {
@@ -190,7 +191,7 @@ button:hover, input:hover {
 
 
 .footer{ 
-    margin-top: auto;
+    margin: 5px;
     display: block;
     background-color: #002E5D;
     font-size: 1.2em;

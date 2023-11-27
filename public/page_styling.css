@@ -29,6 +29,11 @@ body {
     margin-top: 25px;
     margin-bottom: 25px;
 }
+.info p {
+    text-align: left;
+    text-align-last: left;
+}
+
 p{
     font-size: 1em;
 }
@@ -180,10 +185,9 @@ button:hover, input:hover {
   background-color: #003DA5;
 }
 
-
 .footer{ 
     margin-top: auto;
-    padding: 5px;
+    padding: 8px;
     display: block;
     background-color: #002E5D;
     font-size: 1.2em;

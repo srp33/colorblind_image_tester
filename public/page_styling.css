@@ -35,7 +35,7 @@ body {
 .info p {
     text-align: left;
     text-align-last: left;
-    margin: 15px;
+    margin: 25px;
 }
 
 p{
@@ -214,8 +214,8 @@ a{
 }
 
 #about p, #cite p{
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
     text-align: left;
     text-align-last: left;
 }

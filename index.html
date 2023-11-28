@@ -16,51 +16,40 @@
   </div>
 
   <div class="info">
-      <p>
-      Upload biology-oriented, scientific figures and obtain a prediction about whether the figures are friendly to people with moderate-to-severe, red-green colorblindness (deuteranopia). This application will show a version of the image that approximates how it would look to a person with deuteranopia. It will also provide a prediction about whether the image would be friendly to a person with deuteranopia. It makes these predictions based on a convolutional neural network (CNN) trained on manually reviewed images. The CNN is accurate, but it is not perfect; therefore, we encourage biologists to use this tool as a starting point, not to obtain definitive answers about whether a given image is friendly or not. <em>All processing occurs within your browser. We do not store a copy of uploaded images.</em>
-      </p>
+      <p>Upload biology-oriented, scientific figures and obtain a prediction about whether the figures are friendly to people with moderate-to-severe, red-green colorblindness (deuteranopia). This application will show a version of the image that approximates how it would look to a person with deuteranopia. It will also provide a prediction about whether the image would be friendly to a person with deuteranopia. It makes these predictions based on a convolutional neural network (CNN) trained on manually reviewed images. The CNN is accurate, but it is not perfect; therefore, we encourage biologists to use this tool as a starting point, not to obtain definitive answers about whether a given image is friendly or not. <em>All processing occurs within your browser. We do not store a copy of uploaded images.</em></p>
   </div>
 
   <div class="flow_box">
     <div class="container" id="originalImageContainer">
-            <!-- <p>Your uploaded image will display below:</p> -->
       <h3>Upload an image (.png or .jpg)</h3>
+
       <form id="uploadForm">
         <input type="file" name="fileupload" accept="image/*" id="uploadedFile">
-        <button type="submit" name="upload" >SUBMIT</button>
-
+        <button type="submit" name="upload" >Submit</button>
       </form>
 
-      <!-- <p>Your uploaded image will display below:</p> -->
       <div id="input_image_container">
-        <!--<img src="/public/defaultimage.png" id="input_image" style="top:10vh;"> !-->
         <img src="/colorblind_image_tester/public/defaultimage.png" id="input_image" style="top:10vh;">
-
       </div>
     </div>
     <i class="arrow right"></i>
     <div class="container" id="simulatedImageContainer">
       <h3>Simulated image</h3>
 
-      <!-- <button name="show_image" id="show_simulated" onclick="simulateImage()">SHOW SIMULATED IMAGE</button> -->
-      <!-- <p>Your simulated image will display below:</p> -->
-
       <div id="input_image_container">
         <div id="loader" class="center"></div>
         <img src="/colorblind_image_tester/public/converted_image.png" id="output_image">
-        <!--<img src="/public/converted_image.png" id="output_image">!-->
       </div>
       <p id="simulated_image_text">This image is displayed how someone with 80% deuteranopia would see it.</p>
     </div>
     <i class="arrow right"></i>
     <div class="container" id="predictImageContainer">
       <h3>Prediction</h3>
-      <!-- <button name="predict" onclick="predict_image()">PREDICT IF YOUR IMAGE IS COLORBLIND-FRIENDLY</button> -->
-      <!-- <p>Check how colorblind-friendly your image is! </p> -->
+
       <div class="output_screen">
         <div id="output_text">
           <p>Our model predicts that this image is: </p>
-          <p id='prediction_text'> Friendly/Unfriendly </p>
+          <p id='prediction_text'> Friendly / Unfriendly </p>
           <p> X% confidence</p>
           <p><em>Relatively high confidence values imply that the model is more confident in its its predictions.</em></p>
         </div>
@@ -72,17 +61,7 @@
 
     <div class="footer_content">
       <div class="github">
-        <span>
-          <a href="/colorblind_image_tester/about">
-            About
-          </a>
-        </span>
-         | 
-        <span>
-          <a href="/colorblind_image_tester/cite">
-            Cite this Tool
-          </a>
-        </span>
+        <span><a href="/colorblind_image_tester/about">About</a></span> | <span><a href="/colorblind_image_tester/cite">Cite this Tool</a></span>
       </div>
       <div class="footer_logo">
         <img src="https://brightspotcdn.byu.edu/e4/0a/b679ee0a41d9b1675fc78cd03239/byu-logo-white-small.svg" alt="BYU">

@@ -214,8 +214,8 @@ a{
 }
 
 #about p, #cite p{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     text-align: left;
     text-align-last: left;
 }

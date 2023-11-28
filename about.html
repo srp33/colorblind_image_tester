@@ -1,46 +1,26 @@
 <html>
 
 <head>
-  <title>Predicting Scientific Figures as Colorblind Friendly or Not</title>
+  <title>Colorblind Image Tester</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="/colorblind_image_tester/public/page_styling.css">
-  <!--<link rel="stylesheet" type="text/css" href="/public/page_styling.css">!-->
 </head>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <body>
   <div class="header">
-    <h2>Colorblind Friendliness Predictor</h2>
-    <h3> About This Project</h3>
+    <h2>Colorblind Image Tester - About</h2>
   </div>
   <div class='container' id="about">
-    <h4>
-      If you are interested in the development of tool, check out the full project in <a href="#"> our paper!</a>
-    </h4>
-
-    <p>We intend for the website to function as a tool for researchers preparing manuscripts to verify that their images are colorblind-friendly to people with deuteranopia (red-green colorblind). A user can upload a JPG or PNG image to the website and an image is returned how someone with 80% deuteranopia would see that same image according to the Machado et al. 2009 algorithm.</p>
-    <p>This website is part of a larger project to expose how often scientific figures can be problematic to people with color vision deficiencies (CVD). From manually annotating and classifying 6,000 images from the eLife journal, we found that >12% of images would be hard to understand for someone with red-green color blindness. From this curated dataset, we trained a convolutional neural network to predict whether images are colorblind-friendly or not.</p>
-    <p>Through this application, we hope to make our machine learning model more accessible and to enable researchers to identify whether their own images are potentially problematic. We use a Convolutional Neural Network machine learning model to generate predicitons about whether an image is likely to be problematic to a person with deuteranopia.  This prediction includes a probability so that users can understand the extent to which the model is "confident" in its predictions. Our convolutional neural network is not 100% accurate (it is usually around 90% accurate), so if possible, one should consult someone with deuteranopia if they are unsure if their image is friendly.</p>
-    <p>Details of how the website functions can be found at our <a href="https://github.com/srp33/colorblind_image_tester"> website's GitHub</a>. The machine learning model and the code used to create the website can be found at <a href="https://github.com/Harlan144/CVDMachineLearning">our lab's GitHub</a>. If you find this project interesting, please check out   <a href="https://piccolo.byu.edu"> the Piccolo Lab Website</a> for other fun projects!</p>
+    <p>A preprint describing this tool and related research will be published soon...</p>
+    <p>The GitHub site for this tool: <a href="https://github.com/srp33/colorblind_image_tester">https://github.com/srp33/colorblind_image_tester</a></p>
+    <p>Contact us <a href="https://piccolo.byu.edu">here</a>.</p>
   </div>
   
   <div class="footer">
     <div class="footer_content">
       <div class="main_page">
-        <span>
-          <a href="/colorblind_image_tester/">
-            Main Page
-          </a>
-        </span>
-         | 
-        <span>
-          <a href="/colorblind_image_tester/cite">
-            Cite this Tool
-          </a>
-        </span>
+        <span><a href="/colorblind_image_tester/">Main Page</a></span> | <span><a href="/colorblind_image_tester/cite">Cite this Tool</a></span>
       </div>
       <div class="footer_logo">
         <img src="https://brightspotcdn.byu.edu/e4/0a/b679ee0a41d9b1675fc78cd03239/byu-logo-white-small.svg" alt="BYU">
@@ -49,6 +29,5 @@
   </div>
 
   <script src="/colorblind_image_tester/public/script.js"></script>
-  <!--<script src="/public/script.js"></script> !-->
 </body>
 </html>

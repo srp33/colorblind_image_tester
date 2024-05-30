@@ -10,7 +10,7 @@ You can run the Web application locally (instructions below). Or you can use the
 2. Clone this repository.
 3. At the terminal, change your working directory to the location of the cloned repository.
 4. Run the following command at the terminal: `./build_docker.sh` (this assumes you are using a Linux-based operating system).
-5. Run the following command at the terminal: `./run_docker/sh`
+5. Run the following command at the terminal: `./run_docker.sh`
 6. Use a browser to access the website at http://localhost:8080/colorblind_image_tester.
 
 ## Reporting bugs or making improvements
